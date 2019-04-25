@@ -19,3 +19,16 @@ function Q2() {
     console.log('Hipotenusa = ' +  Math.sqrt(Math.pow(x,2) + Math.pow(y,2)))
 }
 
+function Q3() {
+    console.log('Q3');
+    var aux = document.getElementById('profissoes');
+    var profissao = aux.options[aux.selectedIndex].text;
+    // Segue aqui seu código
+    switch (profissao) {
+        case 'Ator':
+        console.log('Masculino');
+        break;
+        
+    }
+}
+
