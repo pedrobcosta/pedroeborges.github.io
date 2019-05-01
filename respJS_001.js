@@ -25,15 +25,71 @@ function Q3() {
     var profissao = aux.options[aux.selectedIndex].text;
     // Segue aqui seu código
     switch (profissao) {
-        case .endsWith('o'||'r'): 
+        case 'Bombeiro':
         console.log('Masculino');
         break;
-        case .endsWith('z'||'ra'||'ca'):
+        case 'Ator':
+        console.log('Masculino');
+        break;
+        case 'Atriz': 
         console.log('Feminino');
         break;
-        case .endWith('ta'||'e'):
+        case 'Enfermeira': 
+        console.log('Feminino');
+        break;
+        case 'Médica': 
+        console.log('Feminino');
+        break;
+        case 'Musicista':
         console.log('Ambos');
         break;
+        case 'Presidente':
+        console.log('Ambos');
+        break;
+        case 'Musico':
+        console.log('Masculino');
+        break;
+        case 'Médico':
+        console.log('Masculino');
+        break;
+        case 'Engenheiro':
+        console.log('Masculino');
+        break;
+        case 'Professor':
+        console.log('Masculino');
+        break;
+        case 'Engenheira':
+        console.log('Feminino');
+        break;
+        case 'Professora':
+        console.log('Feminino');
+        break;
+        case 'Farmacêutica':
+        console.log('Feminino');
+        break;
     }
+}
+
+function Q4() {
+    console.log('Q4');
+    var a_str = document.getElementById('a').value;
+    var b_str = document.getElementById('b').value;
+    var c_str = document.getElementById('c').value;
+    // Segue aqui seu código
+    if (a == 0) {
+    console.log('A = ' + Math.sqrt(Math.pow(b,2) + Math.pow(c,2)))
+    console.log('B = ' + b)
+    console.log('C = ' + c)
+} else if  (b == 0) {
+    console.log('A = ' + a)
+    console.log('B = ' + Math.sqrt(Math.pow(a,2) - Math.pow(c,2)))
+    console.log('C = ' + c)
+} else if (c == 0) {
+    console.log('A = ' + a)
+    console.log('B = ' + b)
+    console.log('C = ' + Math.sqrt(Math.pow(a,2) - Math.pow(b,2)))
+} else {
+    console.log('É necessário informar exatamente dois lados do triângulo')
+}
 }
 
