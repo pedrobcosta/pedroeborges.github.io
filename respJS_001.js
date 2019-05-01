@@ -25,10 +25,15 @@ function Q3() {
     var profissao = aux.options[aux.selectedIndex].text;
     // Segue aqui seu código
     switch (profissao) {
-        case 'Ator':
+        case .endsWith('o'||'r'): 
         console.log('Masculino');
         break;
-        
+        case .endsWith('z'||'ra'||'ca'):
+        console.log('Feminino');
+        break;
+        case .endWith('ta'||'e'):
+        console.log('Ambos');
+        break;
     }
 }
 
