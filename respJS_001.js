@@ -89,7 +89,7 @@ function Q4() {
         console.log('B = ' + b_str)
         console.log('C = ' + Math.sqrt(Math.pow(a_str, 2) - Math.pow(b_str, 2)))
     } else {
-        console.log('É necessário informar exatamente dois lados do triângulo')
+        console.log('É necessário informar exatamente dois lados do triângulo retângulo')
     }
 }
 
