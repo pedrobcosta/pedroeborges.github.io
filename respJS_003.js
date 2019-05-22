@@ -14,7 +14,7 @@ function Q2() {
     console.log('Q2');
     var aux = Number.parseInt(document.getElementById('numerosQ2').value);
     var primos = [];
-    var primoounao = x => {
+    function primoounao(x) {
         for (let num = 2; num < x; num++) {
             if (x % num == 0)
                 return false;
