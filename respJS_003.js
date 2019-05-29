@@ -7,7 +7,7 @@ function Q1() {
     }
     var resp = pares
     document.getElementById('RQ1').innerHTML = "Texto da resposta: " + resp;
-    console.log(resp)
+    console.log(resp);
 }
 
 function Q2() {
@@ -15,23 +15,30 @@ function Q2() {
     var aux = Number.parseInt(document.getElementById('numerosQ2').value);
     var primos = [];
     function primoounao(x) {
-        for (let num = 2; num < x; num++) {
-            if (x % num == 0)
-                return false;
-        }
-        if (primoounao != false)
-            primoounao = true;
+        if (x != 1) {
+        for (let j = 2; j < x; j++) 
+            if (x % j == 0) return false;
+                return x !== 1;
     }
-    for (let num1 = 2; num1 <= aux; num1++) {
-        if (primoounao(num1) == true)
-            primos.push(num1);
+}
+    for (let i = 2; i <= aux; i++) {
+        if (primoounao(i) == true)
+            primos.push(i);
     }
-    var resp = primos
-    document.getElementById('RQ2').innerHTML = "Texto da resposta: " + resp;
-    console.log(resp)
-    console.log(primoounao(2))
-    console.log(primouounao(7))
-    console.log(primoounao(8))
+    document.getElementById('RQ2').innerHTML = "Texto da resposta: " + primos;
+    console.log(primos);
+}
+
+function Q3() {
+    console.log('Q3'); 
+    var listaStrings = [];
+    var novaString = document.getElementById('novaString').value;
+    listaStrings.push(novaString);
+    for (let i = 0; i <= listaStrings.length; i++) {
+        listaStrings = listaStrings[i].toUpperCase();
+    }
+    document.getElementById('RQ3').innerHTML = "Texto da resposta: " + listaStrings;
+    console.log(listaStrings);
 }
 
 
