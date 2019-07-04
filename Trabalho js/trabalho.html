@@ -1,95 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
+
 <head>
-    <meta charset="UTF-8"> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <script src="cra.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-    <body > 
-    <h4>
-        <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="https://www.uol.com.br/">News</a>
-              </li>
-              <li class="nav-item active">
-                    <a class="nav-link" href="http://www.saude.gov.br/noticias/sgep/43600-chat-entra-em-funcionamento-na-central-do-disque-saude-136">Ajuda</a>
-              </li>
-            </ul>
-        </nav>
-    </h4>
-    <h1 class="display-3" class="container-fluid">
-            <div class="card bg-warning text-white">
-                    <div class="card-body">Calculadora de CRA para LEIGOS</div>
-            </div>
-    </h1>
-    <div class="alert alert-danger" data-toggle="tooltip" title="Avisamos!">
-        <strong>Cuidado!</strong> O que acontecerá daqui em diante está por sua conta e risco.
+
+<body>
+  <p id="RQ5">Sem resposta</p>
+  <h4>
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://www.uol.com.br/">News</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"
+            href="http://www.saude.gov.br/noticias/sgep/43600-chat-entra-em-funcionamento-na-central-do-disque-saude-136">Ajuda</a>
+        </li>
+      </ul>
+    </nav>
+  </h4>
+  <h1 class="display-3" class="container-fluid">
+    <div class="card bg-warning text-white">
+      <div class="card-body">Calculadora de CRA para LEIGOS</div>
     </div>
-    <div class="form" class="container-fluid">
-        <form>
-            Quantidade de matérias feitas:
-            <input type="number" name="matérias" min="1" max="60">
-            <button type="button" class="btn btn-outline-danger">Enviar</button>
-          </form>
+  </h1>
+  <div class="alert alert-danger" data-toggle="tooltip" title="Avisamos!">
+    <strong>Cuidado!</strong> O que acontecerá daqui em diante está por sua conta e risco.
+  </div>
+  <div>
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="notas">Notas:</label>
+        (Digite as notas em sequência, separadas por vírgula)
+        <input type="text" class="form-control" id="notas" name="notas">
+      </div>
+      <div class="form-group">
+        <label for="horas">Quantidade de horas:</label>
+        (Digite a quantidade de horas referente a cada curso, inclusive reprovados,
+        separadas por vírgula)
+        <input type="text" class="form-control" id="horas" name="horas">
+      </div>
+      <div class="form-group">
+        <label for="horasrep">Quantidade de horas de matérias com reprovação:</label>
+        (Digite a quantidade de horas referentes a cada curso reprovado, separadas por vírgula)
+        <input type="text" class="form-control" id="horasrep" name="horasrep">
+      </div>
+      <button type="button" onclick="cra()" class="btn btn-outline-danger">Enviar</button>
+    </form>
+  </div><br>
+
+  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
+    Clique caso seu CRA seja menor que 45!
+  </button>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">Você é mais que uma nota!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div>
-            <form action="/action_page.php">
-                <div class="form-group">
-                  <label for="usr">Nota:</label>
-                  <input type="text" class="form-control" id="usr" name="username">
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Peso:</label>
-                  <input type="password" class="form-control" id="pwd" name="password">
-                </div>
-                <button type="button" class="btn btn-outline-danger">Enviar</button>
-              </form>
-        </div><br>
-        
-        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
-            Clique caso seu CRA for menor que 45!
-          </button>
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              
-                <div class="modal-header">
-                  <h4 class="modal-title">Você é mais que uma nota!</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <div class="modal-body">
-                 Esse valor é só um valor. Não fique triste. Existem múltiplas inteligências. Encontre a sua, o que faz teu coração vibrar, e siga isso até o fim.
-                </div>
-                
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          
+
+        <div class="modal-body">
+          Esse valor é só um valor. Não fique triste. Existem múltiplas inteligências. Encontre a sua, o que faz teu
+          coração vibrar, e siga isso até o fim.
         </div>
-        
-        <div class="toast" data-autohide="false">
-                <div class="toast-header">
-                  <strong class="mr-auto text-primary">Emergências</strong>
-                  <small class="text-muted">1 min atrás</small>
-                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-                </div>
-                <div class="toast-body">
-                  Caso necessitar de ajuda em emergência, clique no botão "Ajuda".
-                </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
         </div>
-        
-        <footer class="blockquote-footer">Made by Arthur, Pedro & Thiago<i class="fas fa-coffee"></i></footer><div class="spinner-grow text-danger"></div>
-        
-    </body>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="toast" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Emergências</strong>
+      <small class="text-muted">1 min atrás</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+      Caso necessitar de ajuda em emergência, clique no botão "Ajuda".
+    </div>
+  </div>
+
+  <footer class="blockquote-footer">Made by Arthur, Pedro & Thiago<i class="fas fa-coffee"></i></footer>
+  <div class="spinner-grow text-danger"></div>
+
+</body>
 
 </html>
