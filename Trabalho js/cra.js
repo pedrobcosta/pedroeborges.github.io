@@ -38,6 +38,6 @@ function cra() {
     var totalhoras = somalista(cargahoraria);
     var total = somadetudo / totalhoras;
     var reprovacao = 1 - (0.5 * (somalista(cargareprov) / totalhoras));
-    var resp = total * reprovacao;
+    var resp = Math.round(total * reprovacao * 1000) / 1000;
     document.getElementById('resposta').innerHTML = "Seu CRA é " + resp;
 }

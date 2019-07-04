@@ -12,49 +12,55 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 #divform {
   margin: auto;
   width: 100%;
   text-align: center;
 }
-
 #divnotas {
   position: relative;
   max-width: 100%;
   vertical-align: top;
   display: inline-block;
 }
-
 #divhoras {
   position: relative;
   max-width: 100%;
   vertical-align: top;
   display: inline-block;
 }
-
 #divrep {
   position: relative;
   max-width: 100%;
   vertical-align: top;
   display: inline-block;
 }
-
 .card-body {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
-
 #botao45 {
   position: relative;
   max-width: 100%;
   display: inline-block;
 }
-
 #intro {
-  text-align: justify
+  border-style: solid;
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
 }
-
+p {
+  text-align: justify;
+  text-indent: 2em;
+}
+.alert  {
+  text-align: center;
+}
+#resposta {
+  text-align: center;
+  text-indent: 0%;
+}
 </style>
 
 </head>
@@ -71,7 +77,7 @@
   </div>
   <div id="intro" class="card-body">
     <h5>Instruções de uso</h5>
-    <p>Preencha os campos abaixos com seus respectivos valores sempre separados por ; (ponto e vírgula)
+    <p>Preencha os campos abaixos com seus respectivos valores sempre separados por ; (ponto e vírgula).
     </p>
     <p>  Em "Notas" coloque as notas de todas as matérias que você já fez e em "Carga Horária"
        a quantidade de horas que cada matéria tem.
@@ -85,6 +91,7 @@
     <p>Com essa calculadora você pode fazer simulações para ver como seu CRA ficaria 
       dependendo de suas futuras notas.</p>
   </div>
+  <br>
   <div id="divform">
     <form>
       <div class="form-group" id="divnotas">
@@ -157,3 +164,4 @@
 </body>
 
 </html>
+
