@@ -11,56 +11,111 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#divform {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+#divnotas {
+  position: relative;
+  max-width: 100%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#divhoras {
+  position: relative;
+  max-width: 100%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#divrep {
+  position: relative;
+  max-width: 100%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.card-body {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#botao45 {
+  position: relative;
+  max-width: 100%;
+  display: inline-block;
+}
+
+#intro {
+  text-align: justify
+}
+
+</style>
+
 </head>
 
 <body>
-  <p id="RQ5">Sem resposta</p>
-  <h4>
-    <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="https://www.uol.com.br/">News</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link"
-            href="http://www.saude.gov.br/noticias/sgep/43600-chat-entra-em-funcionamento-na-central-do-disque-saude-136">Ajuda</a>
-        </li>
-      </ul>
-    </nav>
-  </h4>
+  
   <h1 class="display-3" class="container-fluid">
     <div class="card bg-warning text-white">
-      <div class="card-body">Calculadora de CRA para LEIGOS</div>
+      <div class="card-body">Calculadora de CRA</div>
     </div>
   </h1>
   <div class="alert alert-danger" data-toggle="tooltip" title="Avisamos!">
     <strong>Cuidado!</strong> O que acontecerá daqui em diante está por sua conta e risco.
   </div>
-  <div>
-    <form action="/action_page.php">
-      <div class="form-group">
+  <div id="intro" class="card-body">
+    <h5>Instruções de uso</h5>
+    <p>Preencha os campos abaixos com seus respectivos valores sempre separados por ; (ponto e vírgula)
+    </p>
+    <p>  Em "Notas" coloque as notas de todas as matérias que você já fez e em "Carga Horária"
+       a quantidade de horas que cada matéria tem.
+    </p>
+    <p>Para o calculo ser feito de maneira correta, as notas e as cargas horárias devem 
+      ser preenchidas com a mesma ordem.
+    </p>
+    <p>
+      Caso tenho tido alguma reprovação por falta, preencha o último campo com a carga horária dessa matéria.
+    </p>
+    <p>Com essa calculadora você pode fazer simulações para ver como seu CRA ficaria 
+      dependendo de suas futuras notas.</p>
+  </div>
+  <div id="divform">
+    <form>
+      <div class="form-group" id="divnotas">
         <label for="notas">Notas:</label>
-        (Digite as notas em sequência, separadas por vírgula)
+        <!-- (Digite as notas em sequência, separadas por vírgula) -->
         <input type="text" class="form-control" id="notas" name="notas">
       </div>
-      <div class="form-group">
-        <label for="horas">Quantidade de horas:</label>
-        (Digite a quantidade de horas referente a cada curso, inclusive reprovados,
-        separadas por vírgula)
+      <div class="form-group" id="divhoras">
+        <label for="horas">Carga Horária:</label>
+        <!-- (Digite a quantidade de horas referente a cada curso, inclusive reprovados,
+        separadas por vírgula) -->
         <input type="text" class="form-control" id="horas" name="horas">
       </div>
-      <div class="form-group">
-        <label for="horasrep">Quantidade de horas de matérias com reprovação:</label>
-        (Digite a quantidade de horas referentes a cada curso reprovado, separadas por vírgula)
+      <br>
+      <div class="form-group" id="divrep">
+        <label for="horasrep">Carga horária das matérias com reprovação por falta:</label>
+        <!-- (Digite a quantidade de horas referentes a cada curso reprovado, separadas por vírgula) -->
         <input type="text" class="form-control" id="horasrep" name="horasrep">
       </div>
-      <button type="button" onclick="cra()" class="btn btn-outline-danger">Enviar</button>
+      <br>
+      <button type="button" onclick="cra()" class="btn btn-outline-danger" id="">Enviar</button>
     </form>
+    <br>
+    <p id="resposta"> </p>
+    <br>
+    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
+        Clique caso seu CRA seja menor que 45!
+      </button>
   </div><br>
 
-  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
-    Clique caso seu CRA seja menor que 45!
-  </button>
+
   <div class="modal" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">

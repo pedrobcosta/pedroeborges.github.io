@@ -1,13 +1,13 @@
 function cra() {
     var notas = "";
     notas = document.getElementById('notas').value;
-    notas = notas.split(",").map(Number);
+    notas = notas.split(";").map(Number);
     var cargahoraria = "";
     cargahoraria = document.getElementById('horas').value;
-    cargahoraria = cargahoraria.split(",").map(Number);
+    cargahoraria = cargahoraria.split(";").map(Number);
     var cargareprov = "";
     cargareprov = document.getElementById('horasrep').value;
-    cargareprov = cargareprov.split(",").map(Number);
+    cargareprov = cargareprov.split(";").map(Number);
     console.log(notas);
     console.log(cargahoraria);
     console.log(cargareprov);
